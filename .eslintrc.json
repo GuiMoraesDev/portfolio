@@ -1,3 +1,53 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": "next/core-web-vitals",
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"react",
+		"prettier",
+		"@typescript-eslint",
+		"eslint-plugin-import-helpers"
+	],
+	"rules": {
+		"no-console": "warn",
+		"@next/next/no-img-element": "off",
+		"import-helpers/order-imports": [
+			"warn",
+			{
+				"alphabetize": {
+					"ignoreCase": false,
+					"order": "asc"
+				},
+				"groups": [
+					"/^react/",
+					"/^next/",
+					"module",
+					"/^components/",
+					"/^context/",
+					"/^errorBoundary/",
+					"/^helpers/",
+					"/^layouts/",
+					"/^pages/",
+					"/^views/",
+					"/^patterns/",
+					"/^services/",
+					"/^dtos/",
+					"/^modules/",
+					"/^constant/",
+					"/^styles/",
+					"/routes/",
+					"/utils/",
+					["parent", "sibling", "index"]
+				],
+				"newlinesBetween": "always"
+			}
+		]
+	},
+	"settings": {
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".tsx"]
+		},
+		"react": {
+			"version": "detect"
+		}
+	}
 }
