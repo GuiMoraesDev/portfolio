@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text component should render correctly 1`] = `
+.c0 {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: 'Roboto',sans-serif;
+  line-height: 2.0rem;
+  color: #181917;
+  text-transform: none;
+  box-sizing: border-box;
+}
+
+<p
+  class="c0"
+  id="test-Text"
+>
+  test-Text
+</p>
+`;

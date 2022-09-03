@@ -13,8 +13,8 @@ const App = ({ Component, pageProps }: AppProps) => (
   <ThemeProvider theme={theme}>
     <Head>
       <meta name="theme-color" content="#238FAA" />
-      <link rel="shortcut icon" href="/img/icon-512.png" />
-      <link rel="apple-touch-icon" href="/img/icon-512.png" />
+      <link rel="shortcut icon" href="/assets/icon-512.png" />
+      <link rel="apple-touch-icon" href="/assets/icon-512.png" />
     </Head>
 
     <NextSeo
@@ -25,7 +25,7 @@ const App = ({ Component, pageProps }: AppProps) => (
         url: "https://www.guimoraes.dev/",
         title: "Guilherme Moraes",
         description: "Guilherme Front-end engineer",
-        images: [{ url: "https://www.guimoraes.dev/img/cover.png" }],
+        images: [{ url: "https://www.guimoraes.dev/assets/cover.png" }],
         site_name: "Guilherme Moraes",
         locale: "en",
       }}
