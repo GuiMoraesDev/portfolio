@@ -1,0 +1,87 @@
+const partition = {
+  "x1/1": "100%",
+  "x1/2": "50%",
+  "x1/3": "33.333333%",
+  "x1/4": "25%",
+  "x1/5": "20%",
+  "x1/6": "16.666667%",
+  "x1/7": "14.285%",
+  "x1/8": "12.5%",
+  "x1/9": "11.111%",
+  "x1/10": "10%",
+  "x1/12": "8.333333%",
+  "x2/3": "66.666667%",
+  "x2/5": "40%",
+  "x3/4": "75%",
+  "x3/5": "60%",
+  "x4/5": "80%",
+  "x5/6": "83.333333%",
+  "x5/12": "41.666667%",
+  "x7/12": "58.333333%",
+  "x11/12": "91.666667%",
+};
+
+const common = {
+  x0: "0",
+  xpx: "0.1rem",
+  "x0.5": "0.2rem",
+  x1: "0.4rem",
+  "x1.5": "0.6rem",
+  x2: "0.8rem",
+  "x2.5": "1.0rem",
+  x3: "1.2rem",
+  "x3.5": "1.4rem",
+  x4: "1.6rem",
+  "x4.5": "1.8rem",
+  x5: "2.0rem",
+  "x5.5": "2.2rem",
+  x6: "2.4rem",
+  x7: "2.8rem",
+  x8: "3.2rem",
+  x9: "3.6rem",
+  x10: "4.0rem",
+  x11: "4.4rem",
+  x12: "4.8rem",
+  x14: "5.6rem",
+  x16: "6.4rem",
+  x20: "8.0rem",
+  x24: "9.6rem",
+  x28: "11.2rem",
+  x32: "12.8rem",
+  x36: "14.4rem",
+  x40: "16.0rem",
+  x44: "17.6rem",
+  x48: "19.2rem",
+  x52: "20.8rem",
+  x56: "22.4rem",
+  x60: "24.0rem",
+  x64: "25.6rem",
+  x72: "28.8rem",
+  x80: "32.0rem",
+  x96: "38.4rem",
+};
+
+const dimensions = {
+  spacing: {
+    xs: common.x2,
+    sm: common.x3,
+    md: common["x3.5"],
+    lg: common.x4,
+    xl: common.x5,
+  },
+  height: {
+    xs: common.x9,
+    sm: common.x10,
+    md: common.x11,
+    lg: common.x12,
+    xl: common.x14,
+  }
+};
+
+const sizes = {
+  partition,
+  common,
+  dimensions,
+};
+
+export default sizes;
