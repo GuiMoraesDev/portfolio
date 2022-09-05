@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface Props {
-	fullHeight?: boolean;
+	isHero?: boolean;
 }
 
 export const Content = styled.div<Props>`
@@ -13,14 +13,14 @@ export const Content = styled.div<Props>`
 	width: 100%;
 	max-width: 600px;
 	height: 100%;
-	min-height: ${({ fullHeight }) => fullHeight && '100vh'};
+	min-height: ${({ isHero }) => isHero && '100vh'};
 
 	margin: auto;
 	padding: ${({ theme }) => theme.sizes.common.x5};
 
 	@media screen and (${({ theme }) => theme.breakpoints.tablet}) {
 		max-width: 1000px;
-		min-height: auto;
+		min-height: ${({ isHero }) => isHero && '70vh'};
 
 		padding: ${({ theme }) => theme.sizes.common.x8};
 	}

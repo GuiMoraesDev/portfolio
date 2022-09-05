@@ -10,7 +10,7 @@ import * as Styles from './styles';
 const Hero = (): JSX.Element => {
 	return (
 		<Styles.HeroContainer>
-			<Styles.ContentWrapper fullHeight>
+			<Styles.ContentWrapper isHero>
 				<Styles.PresentationWrapper>
 					<Text label="Hi, I'm" dimension="heading1" variant="white" isBold />
 					<Text label="Guilherme" dimension="heading1" variant="white" isBold />
