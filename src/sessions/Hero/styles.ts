@@ -9,47 +9,30 @@ export const HeroContainer = styled.div`
 
 	justify-content: space-between;
 
-	background-image: url('./img/Background.png');
-	background-size: cover;
+	background-color: ${({ theme }) => theme.colors.neutrals[800]};
 
-	padding: ${({ theme }) => theme.sizes.common.x10};
-
-	@media only screen and (min-device-pixel-ratio: 2),
-		only screen and (min-resolution: 192dpi),
-		only screen and (min-resolution: 2dppx) {
-		background-image: url('./img/Background@2x.png');
-	}
+	padding: ${({ theme }) => theme.sizes.common.x5};
 
 	@media screen and (${({ theme }) => theme.breakpoints.tablet}) {
-		background-image: url('./img/BackgroundTablet.png');
-
-		@media only screen and (min-device-pixel-ratio: 2),
-			only screen and (min-resolution: 192dpi),
-			only screen and (min-resolution: 2dppx) {
-			background-image: url('./img/BackgroundTablet@2x.png');
-		}
+		padding: ${({ theme }) => theme.sizes.common.x8};
 	}
 
 	@media screen and (${({ theme }) => theme.breakpoints.laptop}) {
 		display: grid;
 
-		grid-template-columns: 1fr 3fr;
+		grid-template-columns: 35% 65%;
 		grid-template-rows: 3fr 1fr;
 
 		grid-template-areas:
 			'Presentation AvatarCard'
 			'Techs AvatarCard';
 
-		padding: ${({ theme }) =>
-			`${theme.sizes.common.x20} ${theme.sizes.common.x16}`};
+		padding: ${({ theme }) => theme.sizes.common.x14};
+		gap: ${({ theme }) => theme.sizes.common.x6};
+	}
 
-		background-image: url('./img/BackgroundLaptop.png');
-
-		@media only screen and (min-device-pixel-ratio: 2),
-			only screen and (min-resolution: 192dpi),
-			only screen and (min-resolution: 2dppx) {
-			background-image: url('./img/BackgroundLaptop@2x.png');
-		}
+	@media screen and (${({ theme }) => theme.breakpoints.laptopL}) {
+		padding: ${({ theme }) => theme.sizes.common.x16};
 	}
 `;
 
@@ -72,21 +55,18 @@ export const AvatarCard = styled.div`
 	justify-content: center;
 
 	width: 100%;
-	max-width: 50rem;
 	height: 100%;
 
-	padding: ${({ theme }) =>
-		`${theme.sizes.common.x10} ${theme.sizes.common.x8}`};
+	padding: ${({ theme }) => theme.sizes.common.x6};
 
-	gap: ${({ theme }) => theme.sizes.common.x20};
+	gap: ${({ theme }) => theme.sizes.common.x7};
 
 	border: 16px solid ${({ theme }) => theme.themeColors.brandPrimary};
 
-	margin: ${({ theme }) => theme.sizes.common.x10} auto;
+	margin: ${({ theme }) => theme.sizes.common.x6} auto;
 
 	@media screen and (${({ theme }) => theme.breakpoints.tablet}) {
-		padding: ${({ theme }) =>
-			`${theme.sizes.common.x24} ${theme.sizes.common.x8}`};
+		padding: ${({ theme }) => theme.sizes.common.x8};
 	}
 
 	@media screen and (${({ theme }) => theme.breakpoints.laptop}) {
@@ -94,12 +74,17 @@ export const AvatarCard = styled.div`
 
 		justify-content: space-around;
 
-		max-width: 70rem;
-		max-height: 70rem;
+		width: 70%;
+		height: 80%;
 
 		margin: auto;
 
-		gap: ${({ theme }) => theme.sizes.common.x10};
+		gap: ${({ theme }) => theme.sizes.common.x8};
+	}
+
+	@media screen and (${({ theme }) => theme.breakpoints.laptopL}) {
+		width: 64%;
+		height: 72%;
 	}
 `;
 
@@ -119,7 +104,7 @@ export const SocialLinksWrapper = styled.div`
 	}
 `;
 
-export const SocialLinks = styled.button`
+export const SocialLinks = styled.a`
 	display: flex;
 
 	flex-direction: column;
@@ -127,8 +112,8 @@ export const SocialLinks = styled.button`
 	align-items: center;
 	justify-content: center;
 
-	width: ${({ theme }) => theme.sizes.common.x16};
-	height: ${({ theme }) => theme.sizes.common.x16};
+	width: ${({ theme }) => theme.sizes.common.x8};
+	height: ${({ theme }) => theme.sizes.common.x8};
 
 	border: none;
 
@@ -158,5 +143,5 @@ export const TechsWrapper = styled.div`
 	justify-content: space-between;
 
 	width: 100%;
-	max-width: ${({ theme }) => theme.sizes.common.x96};
+	max-width: ${({ theme }) => theme.sizes.common.x44};
 `;

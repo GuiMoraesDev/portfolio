@@ -10,10 +10,6 @@ export default createGlobalStyle`
     outline: 0;
   }
 
-  html {
-    font-size: 50.5%;
-  }
-
   body {
     font-size: ${({ theme }) => theme.sizes.common.x4};
   
@@ -74,17 +70,5 @@ export default createGlobalStyle`
     object-fit: cover;
 
     word-break: break-all;
-  }
-
-  @media (min-width: 1440px) {
-    html {
-      font-size: 55.5%;
-    }
-  }
-
-  @media (min-width: 1560px) {
-    html {
-      font-size: 62.5%;
-    }
   }
 `;

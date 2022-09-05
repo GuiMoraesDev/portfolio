@@ -1,9 +1,9 @@
 import Img from 'next/image';
+import Link from 'next/link';
 
 import { GithubLogo, LinkedinLogo } from 'phosphor-react';
-import Text from 'components/Text';
 
-import Link from 'next/link';
+import Text from 'components/Text';
 
 import * as Styles from './styles';
 
@@ -18,22 +18,25 @@ const Hero = (): JSX.Element => {
 
 			<Styles.AvatarCard>
 				<Img
-					src="/img/avatar.png"
+					src="/assets/avatar.webp"
 					alt="A drawing that represents me wearing a gray jacket and a medium-long brown beard"
 					layout="intrinsic"
 					width={180}
 					height={180}
 				/>
 				<Styles.SocialLinksWrapper>
-					<Link href="https://github.com/GuiMoraesDev">
-						<Styles.SocialLinks>
+					<Link href="https://github.com/GuiMoraesDev" passHref>
+						<Styles.SocialLinks target="_blank" rel="noopener noreferrer">
 							<GithubLogo />
 							<Text label="Github" variant="white" />
 						</Styles.SocialLinks>
 					</Link>
 
-					<Link href="https://www.linkedin.com/in/guimoraesdev/">
-						<Styles.SocialLinks>
+					<Link
+						href="https://www.linkedin.com/in/guimoraesdev/?locale=en_US"
+						passHref
+					>
+						<Styles.SocialLinks target="_blank" rel="noopener noreferrer">
 							<LinkedinLogo />
 							<Text label="LinkedIn" variant="white" />
 						</Styles.SocialLinks>
@@ -42,7 +45,7 @@ const Hero = (): JSX.Element => {
 			</Styles.AvatarCard>
 
 			<Styles.MainTechsWrapper>
-				<Text label="Main techs" dimension="heading2" variant="white" />
+				<Text label="Main techs" dimension="heading3" variant="white" />
 
 				<Styles.TechsWrapper>
 					<img
