@@ -1,22 +1,17 @@
 import styled from 'styled-components';
 
+import { Content } from 'styles/global/patterns';
+
 export const HeroContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 
 	width: 100%;
-	min-height: 100vh;
-
-	justify-content: space-between;
 
 	background-color: ${({ theme }) => theme.colors.neutrals[800]};
+`;
 
-	padding: ${({ theme }) => theme.sizes.common.x5};
-
-	@media screen and (${({ theme }) => theme.breakpoints.tablet}) {
-		padding: ${({ theme }) => theme.sizes.common.x8};
-	}
-
+export const ContentWrapper = styled(Content)`
 	@media screen and (${({ theme }) => theme.breakpoints.laptop}) {
 		display: grid;
 
@@ -27,12 +22,7 @@ export const HeroContainer = styled.div`
 			'Presentation AvatarCard'
 			'Techs AvatarCard';
 
-		padding: ${({ theme }) => theme.sizes.common.x14};
 		gap: ${({ theme }) => theme.sizes.common.x6};
-	}
-
-	@media screen and (${({ theme }) => theme.breakpoints.laptopL}) {
-		padding: ${({ theme }) => theme.sizes.common.x16};
 	}
 `;
 
@@ -66,7 +56,7 @@ export const AvatarCard = styled.div`
 	margin: ${({ theme }) => theme.sizes.common.x6} auto;
 
 	@media screen and (${({ theme }) => theme.breakpoints.tablet}) {
-		padding: ${({ theme }) => theme.sizes.common.x8};
+		max-width: 26rem;
 	}
 
 	@media screen and (${({ theme }) => theme.breakpoints.laptop}) {
@@ -74,17 +64,9 @@ export const AvatarCard = styled.div`
 
 		justify-content: space-around;
 
-		width: 70%;
-		height: 80%;
-
 		margin: auto;
 
 		gap: ${({ theme }) => theme.sizes.common.x8};
-	}
-
-	@media screen and (${({ theme }) => theme.breakpoints.laptopL}) {
-		width: 64%;
-		height: 72%;
 	}
 `;
 
