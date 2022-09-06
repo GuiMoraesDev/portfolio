@@ -8,7 +8,7 @@ export const HeroContainer = styled.div`
 
 	width: 100%;
 
-	background-color: ${({ theme }) => theme.colors.neutrals[800]};
+	background-color: ${({ theme }) => theme.themeColors.canvasInvertedLight};
 `;
 
 export const ContentWrapper = styled(Content)`

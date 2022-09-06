@@ -32,8 +32,8 @@ const appTheme = {
   },
   shadows: {
     none: "none",
-    regular: `0px 3px 6px 1px ${themeColors.canvasDark}`,
-    short: `1px 0px 3px 0px ${themeColors.canvasDark}`,
+    regular: `0px 3px 6px 1px ${colors.neutrals[100]}`,
+    short: `1px 0px 3px 0px ${colors.neutrals[100]}`,
   },
 };
 

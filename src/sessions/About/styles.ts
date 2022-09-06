@@ -9,7 +9,7 @@ export const AboutContainer = styled.div`
 
 	width: 100%;
 
-	background-color: ${({ theme }) => theme.colors.neutrals['050']};
+	background-color: ${({ theme }) => theme.themeColors.canvas};
 `;
 
 export const ContentWrapper = styled.div`
