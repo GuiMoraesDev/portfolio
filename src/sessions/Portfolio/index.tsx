@@ -2,25 +2,23 @@ import { useCallback, useState } from 'react';
 
 import Link from 'next/link';
 
-import { PORTFOLIO_PROJECTS } from 'data';
-import {
-	Link as LinkIcon,
-	GithubLogo,
-	CaretUp,
-	CaretDown,
-} from 'phosphor-react';
+import { Link as LinkIcon, GithubLogo } from 'phosphor-react';
 
 import Text from 'components/Text';
+
+import { Props } from 'pages';
 
 import * as PatternStyles from 'styles/global/patterns';
 
 import { formatProjectsArray } from './helpers/formatProjectsArray';
 import * as Styles from './styles';
 
-const Portfolio = (): JSX.Element => {
-	const [projects, setProjects] = useState(formatProjectsArray);
+const Portfolio = ({ portfolioData }: Props): JSX.Element => {
+	const [projects, setProjects] = useState(() =>
+		formatProjectsArray(portfolioData, 0, 4)
+	);
 
-	const hasMoreProjectsToLoad = projects.length < PORTFOLIO_PROJECTS.length;
+	const hasMoreProjectsToLoad = projects.length < portfolioData.length;
 
 	const handleLoadMoreProjects = useCallback(() => {
 		if (!hasMoreProjectsToLoad) {
@@ -30,11 +28,11 @@ const Portfolio = (): JSX.Element => {
 		setProjects((state) => {
 			const lastIndex = state.length;
 
-			const formattedProjects = formatProjectsArray(lastIndex);
+			const formattedProjects = formatProjectsArray(portfolioData, lastIndex);
 
 			return [...state, ...formattedProjects];
 		});
-	}, [hasMoreProjectsToLoad]);
+	}, [hasMoreProjectsToLoad, portfolioData]);
 
 	return (
 		<Styles.PortfolioContainer>
@@ -45,23 +43,31 @@ const Portfolio = (): JSX.Element => {
 					{projects.map((project) => (
 						<Styles.ProjectCard key={`project_${project.id}`}>
 							<Styles.ProjectLegend>
-								<Text label={project.legend.title} dimension="body1" isBold />
+								<Text label={project.title} dimension="body1" isBold />
 
-								<Text label={project.legend.description} />
+								<Text label={project.description} />
 							</Styles.ProjectLegend>
 
 							<Styles.LinksWrapper>
-								<Link href={project.links.project} passHref>
+								<Link href={project.project_link} passHref>
 									<Styles.SocialLinks target="_blank" rel="noopener noreferrer">
 										<LinkIcon />
-										<Text label="Project" />
+										<Text
+											label="Project"
+											dimension="body3"
+											className="social-links-legend"
+										/>
 									</Styles.SocialLinks>
 								</Link>
 
-								<Link href={project.links.github} passHref>
+								<Link href={project.github_link} passHref>
 									<Styles.SocialLinks target="_blank" rel="noopener noreferrer">
 										<GithubLogo />
-										<Text label="Github" />
+										<Text
+											label="Github"
+											dimension="body3"
+											className="social-links-legend"
+										/>
 									</Styles.SocialLinks>
 								</Link>
 							</Styles.LinksWrapper>

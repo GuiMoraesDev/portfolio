@@ -15,10 +15,13 @@ export const PortfolioContainer = styled.div`
 export const ContentWrapper = styled.div`
 	display: flex;
 
-	flex-direction: column;
+	flex-wrap: wrap;
+
+	align-items: center;
+	justify-content: center;
 
 	padding: ${({ theme }) => theme.sizes.common['x1']};
-	gap: ${({ theme }) => theme.sizes.common['x1.5']};
+	gap: ${({ theme }) => theme.sizes.common['x2.5']};
 `;
 
 export const ProjectCard = styled.div`
@@ -39,6 +42,10 @@ export const ProjectCard = styled.div`
 	border-radius: ${({ theme }) => theme.rounded.sm};
 
 	box-shadow: ${({ theme }) => `0px 2px 8px 0px ${theme.colors.neutrals[900]}`};
+
+	@media screen and (${({ theme }) => theme.breakpoints.tablet}) {
+		max-width: 45%;
+	}
 `;
 
 export const ProjectLegend = styled.section`
@@ -81,16 +88,24 @@ export const SocialLinks = styled.a`
 
 	border: none;
 
-	transition: transform ${({ theme }) => theme.transition.normal};
 	color: ${({ theme }) => theme.themeColors.text};
+	transition: all ${({ theme }) => theme.transition.fast};
 
 	svg {
 		width: 100%;
 		height: 100%;
 	}
+	
+	.social-links-legend {
+		opacity: 0;
+	}
 
 	:hover {
-		transform: scale(1.1);
+		transform: scale(1.2);
+
+		.social-links-legend {
+			opacity: 1;
+		}
 	}
 `;
 

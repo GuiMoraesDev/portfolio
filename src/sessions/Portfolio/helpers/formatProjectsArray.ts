@@ -1,15 +1,15 @@
-import { PORTFOLIO_PROJECTS } from 'data';
-
-const PROJECTS_QTD = 2;
+import { PortfolioProps } from 'pages';
 
 export const formatProjectsArray = (
-	spliceIndex = 0
+	projects: PortfolioProps[],
+	spliceIndex = 0,
+	qtdToLoad = 2
 ) => {
-	const copyOfPortfolioProjects = [...PORTFOLIO_PROJECTS];
+	const copyOfPortfolioProjects = [...projects];
 
 	const projectsQtdToRender = copyOfPortfolioProjects.splice(
 		spliceIndex,
-		PROJECTS_QTD
+		qtdToLoad
 	);
 
 	return projectsQtdToRender;
