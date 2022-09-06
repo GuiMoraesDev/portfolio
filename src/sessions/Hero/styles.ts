@@ -57,6 +57,7 @@ export const AvatarCard = styled.div`
 
 	@media screen and (${({ theme }) => theme.breakpoints.tablet}) {
 		max-width: 26rem;
+		max-height: 26rem;
 	}
 
 	@media screen and (${({ theme }) => theme.breakpoints.laptop}) {
