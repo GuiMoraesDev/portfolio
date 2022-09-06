@@ -18,10 +18,11 @@ export const ContentWrapper = styled.div`
 	flex-wrap: wrap;
 
 	align-items: center;
-	justify-content: center;
 
 	padding: ${({ theme }) => theme.sizes.common['x1']};
 	gap: ${({ theme }) => theme.sizes.common['x2.5']};
+
+	margin: auto;
 `;
 
 export const ProjectCard = styled.div`
@@ -44,7 +45,9 @@ export const ProjectCard = styled.div`
 	box-shadow: ${({ theme }) => `0px 2px 8px 0px ${theme.colors.neutrals[900]}`};
 
 	@media screen and (${({ theme }) => theme.breakpoints.tablet}) {
-		max-width: 45%;
+		max-width: calc(50% - 0.5rem);
+
+		flex: 1 1 50%;
 	}
 `;
 
@@ -54,6 +57,7 @@ export const ProjectLegend = styled.section`
 	flex-direction: column;
 
 	width: 100%;
+	height: 10rem;
 
 	padding: ${({ theme }) => theme.sizes.common['x1.5']};
 

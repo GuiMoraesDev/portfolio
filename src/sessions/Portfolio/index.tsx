@@ -73,14 +73,14 @@ const Portfolio = ({ portfolioData }: Props): JSX.Element => {
 							</Styles.LinksWrapper>
 						</Styles.ProjectCard>
 					))}
-
-					<Styles.Button
-						onClick={handleLoadMoreProjects}
-						disabled={!hasMoreProjectsToLoad}
-					>
-						Load more
-					</Styles.Button>
 				</Styles.ContentWrapper>
+
+				<Styles.Button
+					onClick={handleLoadMoreProjects}
+					disabled={!hasMoreProjectsToLoad}
+				>
+					Load more
+				</Styles.Button>
 			</PatternStyles.Content>
 		</Styles.PortfolioContainer>
 	);
