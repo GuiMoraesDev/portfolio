@@ -20,6 +20,10 @@ export const ContentWrapper = styled.div`
 	@media screen and (${({ theme }) => theme.breakpoints.tablet}) {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
+	@media screen and (${({ theme }) => theme.breakpoints.laptopL}) {
+		grid-template-columns: repeat(3, 1fr);
+	}
 `;
 
 export const ProjectCard = styled.div`
@@ -28,7 +32,7 @@ export const ProjectCard = styled.div`
 	flex-direction: column;
 
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 
 	width: 100%;
 
@@ -39,7 +43,15 @@ export const ProjectCard = styled.div`
 	border: none;
 	border-radius: ${({ theme }) => theme.rounded.sm};
 
-	box-shadow: ${({ theme }) => `0px 2px 8px 0px ${theme.colors.neutrals[900]}`};
+	box-shadow: ${({ theme }) => `0px 5px 6px 2px ${theme.colors.neutrals[900]}`};
+`;
+
+export const ProjectCover = styled.section`
+	width: 100%;
+
+	img {
+		width: 100%;
+	}
 `;
 
 export const ProjectLegend = styled.section`
@@ -48,7 +60,7 @@ export const ProjectLegend = styled.section`
 	flex-direction: column;
 
 	width: 100%;
-	height: 10rem;
+	height: 100%;
 
 	padding: ${({ theme }) => theme.sizes.common['x1.5']};
 

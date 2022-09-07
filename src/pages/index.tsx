@@ -20,9 +20,21 @@ const Page = ({ portfolioData }: Props) => {
 	return <HomePage portfolioData={portfolioData} />;
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-	const token = process.env.NEXT_PUBLIC_GH_TOKEN;
+interface GithubRequestProps {
+	user: {
+		pinnedItems: {
+			nodes: Array<{
+				id: string;
+				homepageUrl: string;
+				url: string;
+				name: string;
+				description: string;
+			}>;
+		};
+	};
+}
 
+export const getStaticProps: GetStaticProps<Props> = async () => {
 	const query = gql`
 		{
 			user(login: "GuiMoraesDev") {
@@ -41,21 +53,16 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 		}
 	`;
 
-	const response = await request<{
-		user: {
-			pinnedItems: {
-				nodes: Array<{
-					id: string;
-					homepageUrl: string;
-					url: string;
-					name: string;
-					description: string;
-				}>;
-			};
-		};
-	}>('https://api.github.com/graphql', query, undefined, {
-		Authorization: `bearer ${token}`,
-	});
+	const headers = {
+		Authorization: `bearer ${process.env.NEXT_PUBLIC_GH_TOKEN}`,
+	};
+
+	const response = await request<GithubRequestProps>(
+		'https://api.github.com/graphql',
+		query,
+		undefined,
+		headers
+	);
 
 	const data = response.user.pinnedItems.nodes.map((node) => ({
 		id: node.id,

@@ -1,9 +1,10 @@
-import { useCallback, useState } from 'react';
+import { SyntheticEvent, useCallback, useState } from 'react';
 
 import Link from 'next/link';
 
 import { Link as LinkIcon, GithubLogo } from 'phosphor-react';
 
+import Img from 'components/Img';
 import Text from 'components/Text';
 
 import { Props } from 'pages';
@@ -42,8 +43,20 @@ const Portfolio = ({ portfolioData }: Props): JSX.Element => {
 				<Styles.ContentWrapper>
 					{projects.map((project) => (
 						<Styles.ProjectCard key={`project_${project.id}`}>
+							<Styles.ProjectCover>
+								<Img
+									src={`https://raw.githubusercontent.com/GuimoraesDev/${project.title}/main/public/img/cover.png`}
+									alt={project.title}
+								/>
+							</Styles.ProjectCover>
+
 							<Styles.ProjectLegend>
-								<Text label={project.title} dimension="body1" isBold isCapitalize />
+								<Text
+									label={project.title}
+									dimension="body1"
+									isBold
+									isCapitalize
+								/>
 
 								<Text label={project.description} />
 							</Styles.ProjectLegend>

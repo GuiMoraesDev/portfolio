@@ -1,6 +1,6 @@
 # My portfolio
 
-<img src="https://raw.githubusercontent.com/GuiMoraesDev/portfolio/main/public/assets/icon-512.png" alt="A letter dark gray G in shape of a triangle centralized inside a blue triangle  in front of a dark gray circle" height="100px" align="right" />
+<img src="https://raw.githubusercontent.com/GuiMoraesDev/portfolio/main/public/img/icon-512.png" alt="A letter dark gray G in shape of a triangle centralized inside a blue triangle  in front of a dark gray circle" height="100px" align="right" />
 
 [![next](https://img.shields.io/badge/nextjs-%5E12.2.5-white?logo=Next.js)](https://nextjs.org/)
 [![typescript](https://img.shields.io/badge/typescript-%5E4.8.2-blue?logo=Typescript)](https://www.typescriptlang.org/)

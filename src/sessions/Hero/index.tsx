@@ -23,7 +23,7 @@ const Hero = (): JSX.Element => {
 
 				<Styles.AvatarCard>
 					<Img
-						src="/assets/avatar.webp"
+						src="/img/avatar.webp"
 						alt="A drawing that represents me wearing a gray jacket and a medium-long brown beard"
 						width={180}
 						height={180}
