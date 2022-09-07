@@ -16,7 +16,8 @@ export const Content = styled.div<Props>`
 	min-height: ${({ isHero }) => isHero && '100vh'};
 
 	margin: auto;
-	padding: ${({ theme }) => theme.sizes.common.x5};
+	gap: ${({ theme }) => theme.sizes.common.x4};
+	padding: ${({ theme }) => theme.sizes.common.x6};
 
 	@media screen and (${({ theme }) => theme.breakpoints.tablet}) {
 		max-width: 1000px;
@@ -26,12 +27,12 @@ export const Content = styled.div<Props>`
 	}
 
 	@media screen and (${({ theme }) => theme.breakpoints.laptop}) {
-		padding: ${({ theme }) => theme.sizes.common.x14};
+		padding: ${({ theme }) => theme.sizes.common.x10};
 	}
 
 	@media screen and (${({ theme }) => theme.breakpoints.laptopL}) {
 		max-width: 1200px;
 
-		padding: ${({ theme }) => theme.sizes.common.x16};
+		padding: ${({ theme }) => theme.sizes.common.x12};
 	}
 `;

@@ -15,14 +15,13 @@ export const ContentWrapper = styled(Content)`
 	@media screen and (${({ theme }) => theme.breakpoints.laptop}) {
 		display: grid;
 
-		grid-template-columns: 35% 65%;
-		grid-template-rows: 3fr 1fr;
+		grid-template-columns: 2fr 5fr;
 
 		grid-template-areas:
 			'Presentation AvatarCard'
 			'Techs AvatarCard';
 
-		gap: ${({ theme }) => theme.sizes.common.x6};
+		gap: ${({ theme }) => theme.sizes.common.x4};
 	}
 `;
 
@@ -56,18 +55,10 @@ export const AvatarCard = styled.div`
 	margin: ${({ theme }) => theme.sizes.common.x6} auto;
 
 	@media screen and (${({ theme }) => theme.breakpoints.tablet}) {
-		max-width: 26rem;
-		max-height: 26rem;
-	}
-
-	@media screen and (${({ theme }) => theme.breakpoints.laptop}) {
-		flex-direction: row;
-
-		justify-content: space-around;
+		max-width: 28rem;
+		max-height: 28rem;
 
 		margin: auto;
-
-		gap: ${({ theme }) => theme.sizes.common.x8};
 	}
 `;
 
@@ -79,12 +70,12 @@ export const SocialLinksWrapper = styled.div`
 
 	width: 100%;
 
-	@media screen and (${({ theme }) => theme.breakpoints.laptop}) {
+	/* @media screen and (${({ theme }) => theme.breakpoints.laptop}) {
 		flex-direction: column;
 
 		width: auto;
 		height: 100%;
-	}
+	} */
 `;
 
 export const SocialLinks = styled.a`

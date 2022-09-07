@@ -25,7 +25,6 @@ const Hero = (): JSX.Element => {
 					<Img
 						src="/assets/avatar.webp"
 						alt="A drawing that represents me wearing a gray jacket and a medium-long brown beard"
-						layout="intrinsic"
 						width={180}
 						height={180}
 					/>
@@ -50,7 +49,7 @@ const Hero = (): JSX.Element => {
 				</Styles.AvatarCard>
 
 				<Styles.MainTechsWrapper>
-					<Text label="Main techs" dimension="heading3" variant="white" />
+					<Text label="Main techs" dimension="heading2" variant="white" />
 
 					<Styles.TechsWrapper>
 						<img
@@ -82,7 +81,7 @@ const Hero = (): JSX.Element => {
 						/>
 
 						<img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg"
 							alt="Next.js logo"
 							width={44}
 							height={44}

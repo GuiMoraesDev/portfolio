@@ -43,7 +43,7 @@ const Portfolio = ({ portfolioData }: Props): JSX.Element => {
 					{projects.map((project) => (
 						<Styles.ProjectCard key={`project_${project.id}`}>
 							<Styles.ProjectLegend>
-								<Text label={project.title} dimension="body1" isBold />
+								<Text label={project.title} dimension="body1" isBold isCapitalize />
 
 								<Text label={project.description} />
 							</Styles.ProjectLegend>
@@ -75,12 +75,14 @@ const Portfolio = ({ portfolioData }: Props): JSX.Element => {
 					))}
 				</Styles.ContentWrapper>
 
-				<Styles.Button
-					onClick={handleLoadMoreProjects}
-					disabled={!hasMoreProjectsToLoad}
-				>
-					Load more
-				</Styles.Button>
+				{hasMoreProjectsToLoad && (
+					<Styles.Button
+						onClick={handleLoadMoreProjects}
+						disabled={!hasMoreProjectsToLoad}
+					>
+						Load more
+					</Styles.Button>
+				)}
 			</PatternStyles.Content>
 		</Styles.PortfolioContainer>
 	);
