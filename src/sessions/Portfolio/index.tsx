@@ -1,4 +1,4 @@
-import { SyntheticEvent, useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import Link from 'next/link';
 
@@ -15,9 +15,7 @@ import { formatProjectsArray } from './helpers/formatProjectsArray';
 import * as Styles from './styles';
 
 const Portfolio = ({ portfolioData }: Props): JSX.Element => {
-	const [projects, setProjects] = useState(() =>
-		formatProjectsArray(portfolioData, 0, 4)
-	);
+	const projects = formatProjectsArray(portfolioData, 0, 4);
 
 	const hasMoreProjectsToLoad = projects.length < portfolioData.length;
 
@@ -26,14 +24,12 @@ const Portfolio = ({ portfolioData }: Props): JSX.Element => {
 			return;
 		}
 
-		setProjects((state) => {
-			const lastIndex = state.length;
+		const lastIndex = projects.length;
 
-			const formattedProjects = formatProjectsArray(portfolioData, lastIndex);
+		const formattedProjects = formatProjectsArray(portfolioData, lastIndex);
 
-			return [...state, ...formattedProjects];
-		});
-	}, [hasMoreProjectsToLoad, portfolioData]);
+		projects.push(...formattedProjects);
+	}, [hasMoreProjectsToLoad, portfolioData, projects]);
 
 	return (
 		<Styles.PortfolioContainer>
@@ -47,6 +43,8 @@ const Portfolio = ({ portfolioData }: Props): JSX.Element => {
 								<Img
 									src={`https://raw.githubusercontent.com/GuimoraesDev/${project.title}/main/public/img/cover.png`}
 									alt={project.title}
+									width={1200}
+									height={630}
 								/>
 							</Styles.ProjectCover>
 

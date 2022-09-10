@@ -27,6 +27,7 @@ const Hero = (): JSX.Element => {
 						alt="A drawing that represents me wearing a gray jacket and a medium-long brown beard"
 						width={180}
 						height={180}
+						priority
 					/>
 					<Styles.SocialLinksWrapper>
 						<Link href="https://github.com/GuiMoraesDev" passHref>
