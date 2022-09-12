@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 
 import Link from 'next/link';
 
@@ -43,8 +43,8 @@ const Portfolio = ({ portfolioData }: Props): JSX.Element => {
 								<Img
 									src={`https://raw.githubusercontent.com/GuimoraesDev/${project.title}/main/public/img/cover.png`}
 									alt={project.title}
-									width={1200}
-									height={630}
+									width={320}
+									height={168}
 								/>
 							</Styles.ProjectCover>
 

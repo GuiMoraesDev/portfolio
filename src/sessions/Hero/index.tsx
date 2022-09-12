@@ -1,8 +1,8 @@
-import Img from 'next/image';
 import Link from 'next/link';
 
 import { GithubLogo, LinkedinLogo } from 'phosphor-react';
 
+import Img from 'components/Img';
 import Text from 'components/Text';
 
 import * as Styles from './styles';

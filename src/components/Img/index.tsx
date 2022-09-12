@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import Img, { ImageProps } from 'next/image';
+import Img, { ImageProps } from 'next/future/image';
 
 const Image = ({
 	src = 'undefined',
